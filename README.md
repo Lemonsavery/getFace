@@ -5,7 +5,7 @@ Given an STL file and the index of a chosen facet within it, finds all facets in
 
 Illutration of choosing a facet, and of which facets getFace returns.
 
-![Illustration of Facet & Face](https://i.imgur.com/CDCd8Nb.png)
+![Illustration of Facet & Face](https://i.imgur.com/htRLA0c.png)
 
 
 
