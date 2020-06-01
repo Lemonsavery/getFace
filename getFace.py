@@ -5,9 +5,11 @@ from stl import mesh # To get file data.
 
 def find_parallel_facets(data,chosen_index):
     ''' Finds all facets in the mesh that are parallel with the chosen facet. 
-        They would be coplanar under translation, but not rotation. The 
-        [zero] index refers to the part of the data containing each facet's 
-        normal vector, which determines what direction it is facing. '''
+        They would be coplanar under translation, but not rotation. 
+        
+        The 'magic number' [0] index refers to the part of the data 
+        containing each facet's normal vector, which determines what 
+        direction it is facing. '''
     parallel_facet_indicies = [index for index, facet in enumerate(data) 
                                if is_collinear(facet[0],data[chosen_index][0])]
     parallel_facet_indicies.remove(chosen_index)
@@ -26,7 +28,10 @@ def is_collinear(v1, v2, atol=1e-08):
 def search_for_face(chosen_index, data, parallel_facet_indicies):
     ''' Looks for parallel facets that share two verticies with 
         face-established facets. Further detail of steps are commented 
-        throughout. '''
+        throughout.
+        
+        The 'magic number' [1] index refers to the part of the data 
+        containing each facet's verticies. '''
     new_indicies = [chosen_index]
     recent_indicies = []
     face_indicies = []
@@ -35,7 +40,7 @@ def search_for_face(chosen_index, data, parallel_facet_indicies):
         recent_indicies = new_indicies
         new_indicies = []
 
-        for particular_recent_index, recent_facet in enumerate(data[recent_indicies]): # For each facet we are finding neighbors for...
+        for recent_facet in data[recent_indicies]: # For each facet we are finding neighbors for...
             next_recent_facet = False
             neighbor_facet = False
             remove_from_parallel = []
