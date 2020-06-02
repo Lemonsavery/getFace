@@ -7,10 +7,9 @@ getFace.py is a tool for use with STL files, a file format used for storing 3D o
 
 ## Example of using getFace.
 
-![Example of UsinggetFace](https://i.imgur.com/WDXkM4x.png)
-
+![Example of UsinggetFace](https://i.imgur.com/WDXkM4x.png)  
 dogbone.stl is a sample STL in this repository. A full path is only necessary if the desired STL file isn't in the same folder as getFace.py, otherwise only the file name is necessary.
 
 ## Requirements
-Developed in Python3.
+Developed in Python3.\n
 getFace has dependencies for python libraries: numpy, stl.
